@@ -1,0 +1,19 @@
+<form (ngSubmit)="sendBook()">
+    <label for="name">Nombre</label>
+    <input type="text" id="name" name="name" [(ngModel)]="book.name">
+
+    <label for="description">Descripcion</label>
+    <input type="text" id="description" name="description" [(ngModel)]="book.description">
+
+    <label for="gender">Genero</label>
+    <select name="gender" id="gender" [(ngModel)]="book.gender_id">
+        <option *ngFor="let gender of genders" value={{gender._id}}>{{gender.name}}</option>
+    </select>
+
+    <label for="person">Persona</label>
+    <select name="person" id="person" [(ngModel)]="book.person_id">
+        <option *ngFor="let person of persons" value={{person._id}}>{{person.alias}}</option>
+    </select>
+    
+    <button type="submit" class="btn btn-success">Enviar</button>
+</form>
