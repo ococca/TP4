@@ -1,9 +1,10 @@
+
 <form (ngSubmit)="sendPerson()">
     <label for="firstName">Nombre</label>
-    <input type="text" id="firstName" name="firstName" [(ngModel)]="person.firstName">
+    <input type="text" id="firstName" name="firstName" [(ngModel)]="person.nombre">
 
     <label for="lastName">Apellido</label>
-    <input type="text" id="lastName" name="lastName" [(ngModel)]="person.lastName">
+    <input type="text" id="lastName" name="lastName" [(ngModel)]="person.apellido">
 
     <label for="alias">Alias</label>
     <input type="text" id="alias" name="alias" [(ngModel)]="person.alias">

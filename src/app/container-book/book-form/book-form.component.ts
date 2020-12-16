@@ -14,8 +14,9 @@ export class BookFormComponent implements OnInit {
   book = {
     nombre: '',
     descripcion: '',
-    gender_id: '',
-    person_id: ''
+    autor: '',
+    genero: 0,
+    prestadoA: 0
   }
 
   constructor() { }
@@ -24,7 +25,8 @@ export class BookFormComponent implements OnInit {
   }
 
   sendBook() {
-    this.newBook.emit(this.book);
+    this.newBook.emit(this.book)
+    alert("datos libro:" + this.book.autor)
   }
 
 }

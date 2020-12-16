@@ -1,3 +1,4 @@
+<h4>Alta de un libro</h4>
 <form (ngSubmit)="sendBook()">
     <label for="name">Nombre</label>
     <input type="text" id="name" name="name" [(ngModel)]="book.nombre">
@@ -5,15 +6,18 @@
     <label for="description">Descripcion</label>
     <input type="text" id="description" name="description" [(ngModel)]="book.descripcion">
 
+    <label for="autor">Autor</label>
+    <input type="text" id="autor" name="autor" [(ngModel)]="book.autor">
+
     <label for="gender">Genero</label>
-    <select name="gender" id="gender" [(ngModel)]="book.gender_id">
+    <select name="gender" id="gender" [(ngModel)]="book.genero">
         <option *ngFor="let gender of genders" value={{gender._id}}>{{gender.nombre}}</option>
     </select>
 
     <label for="person">Persona</label>
-    <select name="person" id="person" [(ngModel)]="book.person_id">
-        <option *ngFor="let person of persons" value={{person._id}}>{{person.alias}}</option>
+    <select name="person" id="person" [(ngModel)]="book.prestadoA">
+        <option *ngFor="let person of persons" value={{person._id}}>{{person.nombre}}</option>
     </select>
 
-    <button type="submit" class="btn btn-success">Enviar</button>
+    <button type="submit" class="btn btn-success">Agregar un libro</button>
 </form>

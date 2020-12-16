@@ -11,10 +11,12 @@ export class PersonFormComponent implements OnInit {
   @Output() newPerson = new EventEmitter();
 
   person = {
-    Nombre: '',
+    nombre: '',
+    apellido: '',
     alias: '',
-    cellphone: '',
-    email: ''
+    email: '',
+    celu: ''
+
   }
 
   constructor() { }

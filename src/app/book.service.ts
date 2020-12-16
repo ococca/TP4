@@ -27,8 +27,8 @@ export class BookService {
         nombre: newBook.nombre,
         descripcion: newBook.descripcion,
         autor: newBook.autor,
-        genero: newBook.gender_id,
-        persona: newBook.person_id
+        genero: newBook.genero,
+        prestadoA: newBook.prestadoA
       }
 
       const response = await this.http.post(this.url + "/libro", body).toPromise();

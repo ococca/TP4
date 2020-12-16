@@ -32,8 +32,6 @@ export class ContainerBookComponent implements OnInit {
 
 
 
-
-
     this.libros = this.books.map((book) => {
 
       const genero = this.genders.find((item) => {
@@ -47,9 +45,10 @@ export class ContainerBookComponent implements OnInit {
       const newBook = {
         nombre: book.nombre,
         descripcion: book.descripcion,
-        autor: book.autor,
-        gender: genero,
-        person: persona
+        autor: book.autor
+        // ,
+        // genero: genero,
+        // prestadoA: persona
       }
 
       return newBook;
