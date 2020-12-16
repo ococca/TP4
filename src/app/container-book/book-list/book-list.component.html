@@ -2,14 +2,16 @@
     <thead>
         <th>Nombre</th>
         <th>Descripcion</th>
+        <th>Autor</th>
         <th>Genero</th>
         <th>Prestado A</th>
     </thead>
     <tbody>
         <tr *ngFor="let book of books">
-            <td>{{ book.name }}</td>
-            <td>{{ book.description }}</td>
-            <td>{{ book.gender.name }}</td>
+            <td>{{ book.nombre }}</td>
+            <td>{{ book.descripcion }}</td>
+            <td>{{ book.autor }}</td>
+            <td>{{ book.gender.nombre }}</td>
             <td>{{ book.person.alias }}</td>
         </tr>
     </tbody>

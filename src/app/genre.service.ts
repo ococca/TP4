@@ -6,33 +6,34 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GenreService {
 
-  url = "https://peaceful-bayou-46033.herokuapp.com";
+  url = "http://apibooksutntp3.herokuapp.com";
+
 
   constructor(private http: HttpClient) { }
 
 
-  async genreList(){
-    try{
-      const response = await this.http.get(this.url+"/genero").toPromise();
+  async genreList() {
+    try {
+      const response = await this.http.get(this.url + "/genero").toPromise();
       return response;
     }
-    catch(e){
+    catch (e) {
       console.log(e);
     }
   }
 
-  async genrePost(newGenre){
-    try{
-      
+  async genrePost(newGenre) {
+    try {
+
       const paquete = {
-        nombre: newGenre.name
+        nombre: newGenre.nombre
       }
 
-      const response = await this.http.post(this.url+"/genero", paquete).toPromise();
+      const response = await this.http.post(this.url + "/genero", paquete).toPromise();
 
       return response;
     }
-    catch(e){
+    catch (e) {
       console.log(e);
     }
   }

@@ -11,8 +11,7 @@ export class PersonFormComponent implements OnInit {
   @Output() newPerson = new EventEmitter();
 
   person = {
-    firstName: '',
-    lastName: '',
+    Nombre: '',
     alias: '',
     cellphone: '',
     email: ''

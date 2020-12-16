@@ -18,7 +18,7 @@ export class ContainerBookComponent implements OnInit {
 
   libros: any;
 
-  constructor(private genreService: GenreService, private personService: PersonService, private bookService: BookService) { 
+  constructor(private genreService: GenreService, private personService: PersonService, private bookService: BookService) {
 
   }
 
@@ -28,25 +28,26 @@ export class ContainerBookComponent implements OnInit {
 
     this.books = await this.bookService.bookList();
 
-    this.persons  = await this.personService.getPerson();
+    this.persons = await this.personService.getPerson();
 
 
 
 
-    
-    this.libros = this.books.map( (book) => {
 
-      const genero = this.genders.find( (item) => {
+    this.libros = this.books.map((book) => {
+
+      const genero = this.genders.find((item) => {
         return item._id == book.gender_id;
       });
 
-      const persona = this.persons.find( (element) => {
+      const persona = this.persons.find((element) => {
         return element._id == book.person_id;
       });
 
       const newBook = {
-        name: book.name,
-        description: book.description,
+        nombre: book.nombre,
+        descripcion: book.descripcion,
+        autor: book.autor,
         gender: genero,
         person: persona
       }
@@ -57,7 +58,7 @@ export class ContainerBookComponent implements OnInit {
   }
 
 
-  async receivedBook(newBook){
+  async receivedBook(newBook) {
     const response = await this.bookService.sendBook(newBook);
     return response;
   }

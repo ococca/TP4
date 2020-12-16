@@ -12,12 +12,12 @@ export class BookFormComponent implements OnInit {
   @Output() newBook = new EventEmitter();
 
   book = {
-    name: '',
-    description: '',
+    nombre: '',
+    descripcion: '',
     gender_id: '',
     person_id: ''
   }
-  
+
   constructor() { }
 
   ngOnInit() {
