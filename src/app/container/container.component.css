@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+h1 {
+    font-family: 'Abril Fatface', cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+ 
+nav {
+    background-color: gainsboro;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li{
+    list-style: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

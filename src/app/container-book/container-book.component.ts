@@ -34,21 +34,20 @@ export class ContainerBookComponent implements OnInit {
 
     this.libros = this.books.map((book) => {
 
-      const genero = this.genders.find((item) => {
+      const genders = this.genders.find((item) => {
         return item._id == book.gender_id;
       });
 
-      const persona = this.persons.find((element) => {
+      const persons = this.persons.find((element) => {
         return element._id == book.person_id;
       });
 
       const newBook = {
         nombre: book.nombre,
         descripcion: book.descripcion,
-        autor: book.autor
-        // ,
-        // genero: genero,
-        // prestadoA: persona
+        autor: book.autor,
+        genero: book.gender_id,
+        prestadoA: book.person_id
       }
 
       return newBook;

@@ -1,0 +1,17 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 60%;
+    margin: 0 20% 0 20%;
+}
+
+form button {
+    margin: 1% 0 1% 0;
+    width: 80px;
+}
+
+label {
+    margin-top: 1em;
+}

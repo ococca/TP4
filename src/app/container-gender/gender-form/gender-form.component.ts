@@ -10,17 +10,18 @@ export class GenderFormComponent implements OnInit {
   @Output() newGenre = new EventEmitter();
 
   //Propiedades como variables globales
-  nombre = '';
+  genero = {
+    nombre: ''
+  }
 
   constructor() { }
 
   ngOnInit() {
   }
 
-
   sendGender() {
-    this.newGenre.emit(this.nombre);
-    // alert('garudo genero' + this.nombre);
+    this.newGenre.emit(this.genero);
+    alert('genero: ' + this.genero.nombre);
   }
 
 }
