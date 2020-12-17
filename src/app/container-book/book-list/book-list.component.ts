@@ -6,8 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  @Input() books=[];
-  
+  @Input() books = [];
+  // @Input() genders;
+  // @Input() persons;
+
   constructor() { }
 
   ngOnInit() {

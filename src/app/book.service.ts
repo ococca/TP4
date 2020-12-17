@@ -23,12 +23,14 @@ export class BookService {
 
   async sendBook(newBook) {
     try {
+
+
       const body = {
         nombre: newBook.nombre,
         descripcion: newBook.descripcion,
         autor: newBook.autor,
-        genero: newBook.genero,
-        prestadoA: newBook.prestadoA
+        genero: newBook.gender_id,
+        prestadoA: newBook.person_id
       }
 
       const response = await this.http.post(this.url + "/libro", body).toPromise();

@@ -15,8 +15,8 @@ export class BookFormComponent implements OnInit {
     nombre: '',
     descripcion: '',
     autor: '',
-    genero: 0,
-    prestadoA: 0
+    genero: '',
+    prestadoA: ''
   }
 
   constructor() { }

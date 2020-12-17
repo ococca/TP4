@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GenreService } from '../genre.service';
 import { BookService } from '../book.service';
 import { PersonService } from '../person.service';
+import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-container-book',
@@ -30,31 +31,32 @@ export class ContainerBookComponent implements OnInit {
 
     this.persons = await this.personService.getPerson();
 
-
-
     this.libros = this.books.map((book) => {
 
-      const genders = this.genders.find((item) => {
+
+      const genero = this.genders.find((item) => {
         return item._id == book.gender_id;
       });
 
-      const persons = this.persons.find((element) => {
+      const persona = this.persons.find((element) => {
         return element._id == book.person_id;
       });
+
+      console.log('genero: ', genero);
+      console.log('persona: ', persona);
 
       const newBook = {
         nombre: book.nombre,
         descripcion: book.descripcion,
         autor: book.autor,
-        genero: book.gender_id,
-        prestadoA: book.person_id
+        genero: genero,
+        prestadoA: persona
       }
 
       return newBook;
 
     });
   }
-
 
   async receivedBook(newBook) {
     const response = await this.bookService.sendBook(newBook);
