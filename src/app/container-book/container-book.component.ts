@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GenreService } from '../genre.service';
 import { BookService } from '../book.service';
 import { PersonService } from '../person.service';
-// import { ConsoleReporter } from 'jasmine';
+
 
 @Component({
   selector: 'app-container-book',
