@@ -20,10 +20,21 @@ export class BookService {
       console.log(e);
     }
   }
+  // ----------------------------------------------------
 
+  async bookListID(libroID) {
+    try {
+      let response = await this.http.get(this.url + '/libro/' + libroID).toPromise();
+      return [response];
+    }
+    catch (e) {
+      console.log(e);
+      return;
+    }
+  }
+  // ---------------------------------------------------
   async sendBook(newBook) {
     try {
-
 
       const body = {
         nombre: newBook.nombre,
@@ -33,12 +44,27 @@ export class BookService {
         prestadoA: newBook.person_id
       }
 
-      const response = await this.http.post(this.url + "/libro", body).toPromise();
+      const response = await this.http.post(this.url + "/c", body).toPromise();
       return response;
     }
     catch (e) {
       console.log(e);
     }
   }
+
+  async borrarLibro(id_libro) {
+    try {
+      await this.http.delete(this.url + '/libro/' + id_libro, { responseType: 'text' }).toPromise();
+      return true;
+    }
+    catch (e) {
+      console.log(e);
+      return false;
+    }
+  }
+
+
+
+
 
 }

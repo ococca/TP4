@@ -38,4 +38,26 @@ export class PersonService {
       console.log(e);
     }
   }
+
+  async borrarPersona(id_persona) {
+    try {
+      await this.http.delete(this.url + '/persona/' + id_persona, { responseType: 'text' }).toPromise();
+      return true;
+    }
+    catch (e) {
+      console.log(e);
+      return false;
+    }
+  }
+
+  // async getPersonId(id_persona) {
+  //   try {
+  //     const response = await this.http.get(this.url + '/persona/' + id_persona, { responseType: 'text' }).toPromise();
+  //     return response;
+  //   }
+  //   catch (e) {
+  //     console.log(e);
+  //   }
+  // }
+
 }

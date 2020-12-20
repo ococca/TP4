@@ -1,10 +1,14 @@
 <table class="table table-striped">
     <thead>
-        <th>Nombre</th>
+        <th>Nombre del Genero</th>
+        <th></th>
+        <th> </th>
     </thead>
     <tbody>
         <tr *ngFor="let gender of genre">
             <td>{{gender.nombre}}</td>
+            <td><button class="btn btn-primary">Editar</button></td>
+            <td><button class="btn btn-danger" (click)="genreBorrar(gender._id)">Borrar</button></td>
         </tr>
     </tbody>
 </table>

@@ -1,17 +1,65 @@
 <table class="table table-striped">
     <thead>
+        <th>Filtro nombre</th>
+        <th>Filtro genero</th>
+        <th>Filtro personas</th>
+        <th>Filtro ID</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <form (ngSubmit)='listBookNombre()'>
+                    <input type="text" id="bookName" name="bookName" [(ngModel)]="nombre">
+                    <button type="submit">Filtar x Nombre</button>
+                </form>
+            </td>
+            <td>
+                <form (ngSubmit)='listBookGenero()'>
+                    <select name="gender" id="gender" [(ngModel)]="book.gender_id">
+                        <option *ngFor="let gender of genders" value={{gender._id}}>{{gender.nombre}}</option>
+                    </select>
+                    <button type="submit">Listar</button>
+                </form>
+            </td>
+            <td>
+                <form (ngSubmit)='listBookPerson()'>
+                    <select id="persona" name="persona" [(ngModel)]="personID">
+                        <option *ngFor="let person of persons" [value]='person._id'>{{person.alias}}</option>
+                    </select>
+                    <button type="submit">Listar</button>
+                </form>
+            </td>
+            <td>
+                <form (ngSubmit)='listBookID()'>
+                    <input type="text" name="bookID" id="bookID" [(ngModel)]="bookID">
+                    <button type="submit">Listar</button>
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<table class="table table-striped">
+    <thead>
         <th>Nombre</th>
         <th>Descripcion</th>
         <th>Autor</th>
         <th>Genero</th>
         <th>Prestado A</th>
+        <th> </th>
+        <th> </th>
     </thead>
     <tbody>
         <tr *ngFor="let book of books">
             <td>{{ book.nombre }}</td>
             <td>{{ book.descripcion }}</td>
             <td>{{ book.autor }}</td>
-
+            <td> </td>
+            <td> </td>
+            <td>
+            </td>
+            <td><button class="btn btn-danger" (click)="borrarLibro(book.id)">Borrar</button></td>
         </tr>
     </tbody>
-</table>a>
+</table>

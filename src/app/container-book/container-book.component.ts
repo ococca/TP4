@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GenreService } from '../genre.service';
 import { BookService } from '../book.service';
 import { PersonService } from '../person.service';
-import { ConsoleReporter } from 'jasmine';
+// import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-container-book',
@@ -12,12 +12,17 @@ import { ConsoleReporter } from 'jasmine';
 export class ContainerBookComponent implements OnInit {
 
   genders: any = [];
-
   books: any = [];
-
   persons: any = [];
-
   libros: any;
+
+  book = {
+    _id: '',
+    nombre: '',
+    descripcion: '',
+    genero: '',
+    personaA: ''
+  }
 
   constructor(private genreService: GenreService, private personService: PersonService, private bookService: BookService) {
 

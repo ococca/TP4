@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { GenreService } from 'src/app/genre.service';
+
 
 @Component({
   selector: 'app-gender-form',
@@ -11,8 +13,9 @@ export class GenderFormComponent implements OnInit {
 
   //Propiedades como variables globales
   genero = {
+    _id: '',
     nombre: ''
-  }
+  };
 
   constructor() { }
 
@@ -21,7 +24,9 @@ export class GenderFormComponent implements OnInit {
 
   sendGender() {
     this.newGenre.emit(this.genero);
-    alert('genero: ' + this.genero.nombre);
+    // alert('genero: ' + this.genero.nombre);
   }
 
+
 }
+

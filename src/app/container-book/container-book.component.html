@@ -1,3 +1,6 @@
 <h1>Mis libros</h1>
-<app-book-form [genders]="genero" [persons]="persona" (newBook)="receivedBook($event)"></app-book-form>
+<app-book-form [genders]="genders" [persons]="persons" (newBook)="receivedBook($event)"></app-book-form>
+<!-- <app-book-form-person [books]='books' [persons]='persons' (nuevoPrestamoEnviado)='libroPrestado($event)'>
+</app-book-form-person> -->
+
 <app-book-list [books]="libros"></app-book-list>

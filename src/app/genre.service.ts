@@ -37,4 +37,20 @@ export class GenreService {
       console.log(e);
     }
   }
+
+
+  async genreBorrar(id_genero) {
+    try {
+      console.log(id_genero);
+      await this.http.delete(this.url + '/genero/' + id_genero, { responseType: 'text' }).toPromise();
+      return true;
+    }
+
+    catch (e) {
+      console.log(e);
+      return false;
+    }
+  }
+
+
 }

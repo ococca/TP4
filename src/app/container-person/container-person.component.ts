@@ -10,6 +10,8 @@ export class ContainerPersonComponent implements OnInit {
 
   persons: any = [];
 
+  
+
   constructor(private personService: PersonService) { }
 
   async ngOnInit() {
