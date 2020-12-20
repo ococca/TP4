@@ -50,14 +50,4 @@ export class PersonService {
     }
   }
 
-  // async getPersonId(id_persona) {
-  //   try {
-  //     const response = await this.http.get(this.url + '/persona/' + id_persona, { responseType: 'text' }).toPromise();
-  //     return response;
-  //   }
-  //   catch (e) {
-  //     console.log(e);
-  //   }
-  // }
-
 }
