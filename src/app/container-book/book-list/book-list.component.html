@@ -15,7 +15,7 @@
             </td>
             <td>
                 <form (ngSubmit)='listBookGenero()'>
-                    <select name="gender" id="gender" [(ngModel)]="book.gender_id">
+                    <select name="gender" id="gender" [(ngModel)]="book.genero">
                         <option *ngFor="let gender of genders" value={{gender._id}}>{{gender.nombre}}</option>
                     </select>
                     <button type="submit">Listar</button>
@@ -23,8 +23,8 @@
             </td>
             <td>
                 <form (ngSubmit)='listBookPerson()'>
-                    <select id="persona" name="persona" [(ngModel)]="personID">
-                        <option *ngFor="let person of persons" [value]='person._id'>{{person.alias}}</option>
+                    <select name="person" id="person" [(ngModel)]="book.person_id">
+                        <option *ngFor="let person of persons" value={{person._id}}>{{person.nombre}}</option>
                     </select>
                     <button type="submit">Listar</button>
                 </form>

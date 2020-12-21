@@ -11,22 +11,18 @@ import { PersonService } from 'src/app/person.service';
 })
 export class BookListComponent implements OnInit {
   @Input() books = [];
-  @Input() genders;
-  @Input() persons;
-
-  bookID = '';
-  nombre = '';
-  generoID = '';
-  personID = '';
+  @Input() genders = [];
+  @Input() persons = [];
 
 
-  book: any = [{
-    _id: '',
+  book = {
     nombre: '',
     descripcion: '',
+    autor: '',
     genero: '',
-    persona: '',
-  }]
+    prestadoA: ''
+  }
+
   constructor(
     private genreService: GenreService,
     private personService: PersonService,
@@ -34,7 +30,7 @@ export class BookListComponent implements OnInit {
 
   ngOnInit() {
 
-    
+
   }
 
 

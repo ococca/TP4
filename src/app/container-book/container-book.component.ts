@@ -24,6 +24,11 @@ export class ContainerBookComponent implements OnInit {
     personaA: ''
   }
 
+  person = {
+    _id: '',
+    nombre: ''
+  }
+
   constructor(private genreService: GenreService, private personService: PersonService, private bookService: BookService) {
 
   }
@@ -47,8 +52,8 @@ export class ContainerBookComponent implements OnInit {
         return element._id == book.person_id;
       });
 
-      console.log('genero: ', genero);
-      console.log('persona: ', persona);
+      // console.log('genero: ', genero);
+      // console.log('persona: ', persona);
 
       const newBook = {
         nombre: book.nombre,
